@@ -2,18 +2,18 @@ import Api from '@/services/Api'
 
 export default {
     index() {
-        return Api().get('users')
+        return Api().get('mouses')
     },
-    show(userId){
-        return Api().get('user/'+userId)
+    show(mouseId){
+        return Api().get('mouse/'+mouseId)
     },
-    post(user){
-        return Api().post('user', user)
+    post(mouse){
+        return Api().post('mouse', mouse)
     },
-    put(user){
-        return Api().put('user/'+user.id, user)
+    put(mouse){
+        return Api().put('mouse/'+mouse.id, mouse)
     },
-    delete(user){
-        return Api().delete('user/'+user.id, user)
+    delete(mouse){
+        return Api().delete('mouse/'+mouse.id, mouse)
     },
 }

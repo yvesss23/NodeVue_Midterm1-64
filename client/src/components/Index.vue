@@ -1,26 +1,26 @@
 <template>
   <div>
-    <h1>Get All Users</h1>
-    <div v-if="users.length">
-      <h4>จำนวนผู้ใช้งาน {{ users.length }}</h4>
+    <h1>Get All Mouses</h1>
+    <div v-if="Mouses.length">
+      <h4>จำนวนเม้า {{ Mouses.length }}</h4>
       <p>
-        <button v-on:click="navigateTo('/user/create')">
+        <button v-on:click="navigateTo('/mouse/create')">
             สร้างผู้ใช้งาน
           </button>
       </p>
-      <div v-for="user in users" v-bind:key="user.id">
-        <p>id: {{ user.id }}</p>
-        <p>ชื่อ-นามสกุล: {{ user.name }} - {{ user.lastname }}</p>
-        <p>Email: {{ user.email }}</p>
-        <p>Password: {{ user.password }}</p>
+      <div v-for="mouse in mouses" v-bind:key="mouse.id">
+        <p>id: {{ mouse.id }}</p>
+        <p>ชื่อ-นามสกุล: {{ mouse.model }}}</p>
+        <p>Email: {{ mouse.size }}</p>
+        <p>Password: {{ mouse.buttons }}</p>
         <p>
-          <button v-on:click="navigateTo('/user/' + user.id)">
+          <button v-on:click="navigateTo('/mouse/' + mouse.id)">
             ดูข้อมูลผู้ใช้
           </button>
-          <button v-on:click="navigateTo('/user/edit/' + user.id)">
+          <button v-on:click="navigateTo('/mouse/edit/' + mouse.id)">
             แก้ไขข้อมูล
           </button>
-          <button v-on:click="deleteUser(user)">
+          <button v-on:click="deletemouse(mouse)">
             ลบข้อมูล
           </button>
         </p>
@@ -49,11 +49,11 @@ export default {
     navigateTo(route) {
       this.$router.push(route);
     },
-    async deleteUser(user){
+    async deletemousue(mouse){
       let result = confirm("Want to delete")
       if(result){
         try{
-          await UsersService.delete(user)
+          await UsersService.delete(mouse)
           this.refreshData()
         }catch(error){
           console.log(error)

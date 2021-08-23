@@ -1,6 +1,6 @@
-# nv-webblog-client
+# nodevue-midterm1-64
 
-> nodejs veujs webblog client
+> nodejs vuejs test midterm
 
 ## Build Setup
 

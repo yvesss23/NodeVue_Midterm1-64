@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>Show User</h1>
-    <p>id: {{ userId }}</p>
-    <p>ชื่อ - นามสกุล {{ user.name }} - {{ user.lastname }}</p>
-    <p>email: {{ user.email }}</p>
-    <p>password: {{ user.password }}</p>
+    <h1>Show Mouse</h1>
+    <p>id: {{ mouseId }}</p>
+    <p>ยี่ห้อ: {{ mouse.model }}}</p>
+    <p>ขนาด: {{ mouse.size }}</p>
+    <p>ปุ่ม: {{ mouse.button }}</p>
   </div>
 </template>
 <script>
@@ -12,13 +12,13 @@ import UserService from "@/services/UsersService";
 export default {
   data() {
     return {
-      user: null,
+      mouse: null,
     };
   },
   async created() {
     try {
-      let userId = this.$route.params.userId;
-      this.user = (await UserService.show(userId)).data;
+      let mouseId = this.$route.params.mouseId;
+      this.mouse = (await UserService.show(mouseId)).data;
     } catch (error) {
       console.log(error);
     }

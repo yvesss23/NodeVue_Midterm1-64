@@ -3,10 +3,10 @@ const UserAuthenController =  require('./controllers/UserAuthenController');
 
 
 module.exports = (app) => {
-    app.post('/user',UserController.create)
-    app.put('/user/:userId',UserController.put)
-    app.delete('/user/:userId',UserController.remove)
-    app.get('/user/:userId',UserController.show)
-    app.get('/users',UserController.index)
-    app.post('/login',UserAuthenController.login)
+    app.post('/mouse',UserController.create)
+    app.put('/mouse/:mouseId',UserController.put)
+    app.delete('/mouse/:mouseId',UserController.remove)
+    app.get('/mouse/:mouseId',UserController.show)
+    app.get('/mouses',UserController.index)
+   // app.post('/login',UserAuthenController.login)
 }
